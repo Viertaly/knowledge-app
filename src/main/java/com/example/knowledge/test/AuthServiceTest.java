@@ -12,7 +12,7 @@ public class AuthServiceTest {
 
         try {
             User u = auth.register("testuser", "testpass");
-            System.out.println("User registered successfully: " + u.getUsername());
+            System.out.println("Пользователь успешно зарегистрирован: " + u.getUsername());
         } catch (IllegalArgumentException e) {
             System.out.println("Registration skipped: " + e.getMessage());
         } catch (Exception e) {
@@ -21,9 +21,9 @@ public class AuthServiceTest {
 
         try {
             User logged = auth.login("testuser", "testpass");
-            System.out.println("Login successful: " + logged.getUsername());
+            System.out.println("Вход выполнен: " + logged.getUsername());
         } catch (Exception e) {
-            System.out.println("Login failed: " + e.getMessage());
+            System.out.println("Ошибка входа: " + e.getMessage());
         }
     }
 }

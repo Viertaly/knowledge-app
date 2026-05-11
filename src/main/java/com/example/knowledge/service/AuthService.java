@@ -22,14 +22,14 @@ public class AuthService {
 
     public User register(String username, String password) {
         if (username == null || username.trim().isEmpty()) {
-            throw new IllegalArgumentException("username must not be empty");
+            throw new IllegalArgumentException("имя пользователя не должно быть пустым");
         }
         if (password == null || password.isEmpty()) {
-            throw new IllegalArgumentException("password must not be empty");
+            throw new IllegalArgumentException("пароль не должен быть пустым");
         }
         Optional<User> existing = userRepository.findByUsername(username);
         if (existing.isPresent()) {
-            throw new IllegalArgumentException("username already exists");
+            throw new IllegalArgumentException("имя пользователя уже существует");
         }
         User u = new User(null, username, password);
         return userRepository.save(u);
