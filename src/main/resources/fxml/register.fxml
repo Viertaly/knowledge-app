@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/22.0.2" xmlns:fx="http://javafx.com/fxml/1"
+    spacing="10" alignment="CENTER" fx:controller="com.example.knowledge.controller.RegisterController" stylesheets="@../css/style-dark.css">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Register" style="-fx-font-size:18px; -fx-font-weight: bold;" />
+
+    <TextField fx:id="usernameField" promptText="Username" />
+    <PasswordField fx:id="passwordField" promptText="Password" />
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="registerButton" text="Register" onAction="#onRegister" />
+        <Button fx:id="backButton" text="Back" onAction="#onBack" />
+    </HBox>
+
+</VBox>

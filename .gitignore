@@ -1,0 +1,34 @@
+# Maven / Java
+target/
+!.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber
+# IDEs
+.idea/
+.project
+.classpath
+*.iml
+.settings/
+.vscode/
+# OS files
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+
+# compiled classes
+**/target/
+*.class
+
+# temporary files
+*.tmp
+*.swp
+
+# local env
+.env

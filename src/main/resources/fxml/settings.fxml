@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="com.example.knowledge.controller.SettingsController" spacing="10" alignment="CENTER" stylesheets="@../css/style-dark.css">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10" />
+    </padding>
+
+    <Label text="Settings" style="-fx-font-size:16px; -fx-font-weight:bold;" />
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Theme:" />
+        <ComboBox fx:id="themeCombo" editable="false" onAction="#onThemeChange" />
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Logout" onAction="#onLogout" />
+    </HBox>
+
+</VBox>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.web.HTMLEditor?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.knowledge.controller.MainController" stylesheets="@../css/style-dark.css">
+
+    <!-- TOP: toolbar -->
+    <top>
+        <HBox fx:id="topBar" spacing="12" alignment="CENTER_LEFT" BorderPane.alignment="CENTER" styleClass="toolbar">
+            <padding>
+                <Insets top="12" right="16" bottom="12" left="16" />
+            </padding>
+            <Label fx:id="welcomeLabel" styleClass="welcome-label" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label fx:id="saveStatusLabel" styleClass="status-label" text="Saved" />
+            <Button fx:id="settingsButton" text="Settings" onAction="#onOpenSettings" />
+            <Button fx:id="logoutButton" text="Logout" onAction="#onLogout" />
+        </HBox>
+    </top>
+
+    <!-- LEFT: sidebar with search + notes list -->
+    <left>
+        <VBox spacing="8" BorderPane.alignment="CENTER_LEFT" styleClass="sidebar">
+            <padding>
+                <Insets top="12" right="10" bottom="12" left="10" />
+            </padding>
+            <TextField fx:id="searchField" promptText="Search..." styleClass="search-field" />
+            <Separator />
+            <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+                <content>
+                    <TreeView fx:id="notesTree" prefWidth="260" styleClass="notes-tree" />
+                </content>
+            </ScrollPane>
+        </VBox>
+    </left>
+
+    <!-- CENTER: editor area -->
+    <center>
+        <VBox spacing="10" BorderPane.alignment="CENTER" styleClass="editor-area">
+            <padding>
+                <Insets top="12" right="16" bottom="12" left="16" />
+            </padding>
+                <VBox spacing="10" styleClass="editor-card" VBox.vgrow="ALWAYS">
+                    <TextField fx:id="titleField" promptText="Title" styleClass="title-field" />
+
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <Button fx:id="createButton" text="Create" onAction="#onCreateNote" styleClass="action-button" />
+                        <Button fx:id="updateButton" text="Update" onAction="#onUpdateNote" styleClass="action-button" />
+                        <Button fx:id="deleteButton" text="Delete" onAction="#onDeleteNote" styleClass="action-button" />
+                    </HBox>
+
+                    <Label text="Content" styleClass="section-label" />
+
+                    <StackPane styleClass="editor-frame" VBox.vgrow="ALWAYS">
+                        <HTMLEditor fx:id="noteEditor" prefHeight="420.0" styleClass="htmleditor" />
+                    </StackPane>
+
+                    <HBox spacing="12" alignment="CENTER_LEFT">
+                        <Label text="Created:" />
+                        <Label fx:id="createdAtLabel" text="—" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Label text="Updated:" />
+                        <Label fx:id="updatedAtLabel" text="—" />
+                    </HBox>
+                </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

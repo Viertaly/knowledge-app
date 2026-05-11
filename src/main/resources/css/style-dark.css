@@ -1,0 +1,188 @@
+/* Dark theme for KnowledgeApp — modern, minimalistic */
+
+/* Base */
+.root {
+    -fx-font-family: "Segoe UI", "System";
+    -fx-font-size: 13px;
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #e0e0e0;
+}
+
+/* Layout containers */
+.toolbar {
+    -fx-background-color: linear-gradient(#242424, #1e1e1e);
+    -fx-background-radius: 10;
+    -fx-padding: 8 12 8 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 8, 0.4, 0, 2);
+}
+
+.sidebar {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+}
+
+.editor-area {
+    -fx-background-color: transparent;
+}
+
+.editor-card {
+    -fx-background-color: #262626;
+    -fx-background-radius: 10;
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 12, 0.4, 0, 4);
+}
+
+/* Text / headings */
+.welcome-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f5f5f5;
+}
+.section-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #e8e8e8;
+}
+.status-label {
+    -fx-text-fill: #bdbdbd;
+    -fx-font-size: 12px;
+}
+
+/* Buttons */
+.action-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e0e0e0;
+    -fx-background-radius: 8;
+    -fx-padding: 6 12 6 12;
+    -fx-cursor: hand;
+    -fx-effect: null;
+}
+
+/* Create (green) */
+#createButton {
+    -fx-background-color: linear-gradient(#4caf50, #43a047);
+    -fx-text-fill: white;
+}
+#createButton:hover {
+    -fx-background-color: linear-gradient(#5cc85b, #4caf50);
+}
+
+/* Delete (red) */
+#deleteButton {
+    -fx-background-color: linear-gradient(#e53935, #d32f2f);
+    -fx-text-fill: white;
+}
+#deleteButton:hover {
+    -fx-background-color: linear-gradient(#f05545, #e53935);
+}
+
+/* Update (neutral) */
+#updateButton {
+    -fx-background-color: linear-gradient(#3a4956, #2f3b46);
+    -fx-text-fill: #e6eef6;
+}
+#updateButton:hover {
+    -fx-background-color: linear-gradient(#445461, #39464f);
+}
+
+.action-button:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* Text fields */
+.text-field, .password-field, .title-field {
+    -fx-background-color: #242424;
+    -fx-background-radius: 10;
+    -fx-text-fill: #e0e0e0;
+    -fx-prompt-text-fill: rgba(224,224,224,0.45);
+    -fx-padding: 8 10 8 10;
+    -fx-border-color: transparent;
+}
+
+.search-field {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-background-radius: 18;
+    -fx-padding: 8 12 8 12;
+    -fx-text-fill: #e0e0e0;
+    -fx-prompt-text-fill: rgba(224,224,224,0.5);
+    -fx-cursor: text;
+}
+.search-field:focused {
+    -fx-effect: dropshadow(gaussian, rgba(76,175,80,0.12), 10, 0.2, 0, 0);
+    -fx-background-color: rgba(255,255,255,0.04);
+}
+
+/* TreeView (notes list) */
+.notes-tree {
+    -fx-background-color: transparent;
+}
+.notes-tree, .notes-tree .tree-cell, .notes-tree .tree-cell .text, .notes-tree .text {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-text-fill: #e0e0e0;
+}
+.notes-tree .tree-cell {
+    -fx-padding: 8 12 8 12;
+}
+.notes-tree .tree-cell:hover {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-background-radius: 6;
+}
+/* Selection and focus states */
+.notes-tree .tree-cell:selected, .notes-tree .tree-cell:focused {
+    -fx-background-color: linear-gradient(#3e8e41, #2f7b33);
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+}
+.notes-tree .tree-view .placeholder {
+    -fx-text-fill: rgba(224,224,224,0.45);
+}
+
+/* Ensure scroll viewport is transparent in sidebar */
+.sidebar .scroll-pane, .sidebar .scroll-pane .viewport, .sidebar .scroll-pane .content {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+/* Editor area */
+.editor-frame {
+    -fx-background-color: #1f1f1f;
+    -fx-background-radius: 8;
+    -fx-padding: 8;
+}
+.htmleditor {
+    -fx-background-color: transparent;
+}
+
+/* HTMLEditor inner web view override (best-effort) */
+.htmleditor .web-view {
+    -fx-background-color: #181818;
+}
+
+/* Misc */
+.separator {
+    -fx-background-color: rgba(255,255,255,0.03);
+}
+
+/* Smooth-ish transitions (note: JavaFX has limited CSS transitions) */
+.button, .text-field, .search-field, .tree-cell {
+    -fx-opacity: 1.0;
+}
+
+/* Cursor pointer for clickable controls */
+.button {
+    -fx-cursor: hand;
+}
+
+/* Make placeholder / prompt text slightly dimmer */
+.label, .text, .text-area {
+    -fx-fill: #e0e0e0;
+}
+
+/* Fine tune list spacing */
+.notes-tree .tree-cell .text {
+    -fx-line-spacing: 1.2em;
+}
+
+/* End of style-dark.css */
